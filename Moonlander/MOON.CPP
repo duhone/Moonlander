@@ -33,7 +33,7 @@ shipclass ship;
 
 TMOONLANER *MOONLANER;
 //---------------------------------------------------------------------------
-TMOONLANER::TMOONLANER()
+TMOONLANER::TMOONLANER(HINSTANCE a_instance) : m_instance(a_instance)
    
 {
 }
@@ -593,7 +593,7 @@ void TMOONLANER::FormKeyDown(WORD &Key)
       {
        if(menulevel == 1 && menuy == 2)
         {
-         Close();
+		   m_done = true;
         }
        if(menulevel == 1 && menuy == 1)
         {
@@ -727,7 +727,7 @@ void TMOONLANER::FormCreate()
 
   ShowCursor(FALSE);
 
-ddinit(&bits,&lpdd,&lpdd1,&lpddsprimary,&lpddsback,Handle);
+ddinit(&bits,&lpdd,&lpdd1,&lpddsprimary,&lpddsback,m_instance);
 
 //Timer1->Enabled = true;
 
@@ -1371,7 +1371,7 @@ void TMOONLANER::gameloop()
 				  difftime = currenttime - prevtime;
 				 }
 
-                while(PeekMessage(&msg,MOONLANER->Handle,WM_KEYFIRST,WM_KEYLAST,PM_REMOVE ))
+                while(PeekMessage(&msg,NULL,WM_KEYFIRST,WM_KEYLAST,PM_REMOVE ))
                  {
                  }
 
@@ -1391,7 +1391,7 @@ void TMOONLANER::gameloop()
 				  difftime = currenttime - prevtime;
 				 }
 
-                while(PeekMessage(&msg,MOONLANER->Handle,WM_KEYFIRST,WM_KEYLAST,PM_REMOVE ))
+                while(PeekMessage(&msg,NULL,WM_KEYFIRST,WM_KEYLAST,PM_REMOVE ))
                  {
                  }
 

@@ -1,0 +1,6 @@
+*.obj
+*.idb
+*.pdb
+Moonlander/Debug/Moonlander.tlog/unsuccessfulbuild
+*.suo
+*.sdf

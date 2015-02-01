@@ -2,14 +2,8 @@
 #include<ddraw.h>
 #include<math.h>
 #include "screen.h"
-
+#include "Util.h"
 #include "TERAIN.h"
-
-//---------------------------------------------------------------------------
-#pragma package(smart_init)
-
-
-
 
 void terrainclass::newterrain(int diff)
  {
@@ -30,7 +24,7 @@ void terrainclass::newterrain(int diff)
       terarray[0].v3.lz=10;
       terarray[0].v2.lx=0;
       terarray[0].v2.ly=550;
-      terarray[0].v2.lz=0.1;
+      terarray[0].v2.lz=0.1f;
       terarray[0].color.red = 1;
       terarray[0].color.green = 2;
       terarray[0].color.blue = 1;
@@ -40,10 +34,10 @@ void terrainclass::newterrain(int diff)
       terarray[1].v1.lz=10;
       terarray[1].v3.lx=50;
       terarray[1].v3.ly=550;
-      terarray[1].v3.lz=0.1;
+      terarray[1].v3.lz=0.1f;
       terarray[1].v2.lx=0;
       terarray[1].v2.ly=550;
-      terarray[1].v2.lz=0.1;
+      terarray[1].v2.lz=0.1f;
       terarray[1].color.red = 1;
       terarray[1].color.green = 2;
       terarray[1].color.blue = 1;
@@ -78,7 +72,7 @@ void terrainclass::newterrain(int diff)
       ytemp = 340;
 
 
-	  currentangle = (rand()%diff)+1;
+	  currentangle = static_cast<float>((rand()%diff)+1);
 	  if((rand()%2) == 0) currentangle *= -1;
 	  distance = (rand()%(120-diff))+1;
 	  ytemp += distance*sin(currentangle*0.017453);
@@ -146,12 +140,12 @@ void terrainclass::newterrain(int diff)
       terarray[numbpolys-1].color.blue = 1;
 
 	  prevangle = currentangle;
-	  if(random(6+(diff/9))==0) currentangle = 0;
+	  if((rand()%(6+(diff/9)))==0) currentangle = 0;
 		else
 		 {
 		  if(currentangle < 0)
            {
-            currentangle = -1*random(diff)+1;
+            currentangle = -1*(rand()%diff)+1;
 		    if(random(4) == 0) currentangle *= -1;
            }
            else

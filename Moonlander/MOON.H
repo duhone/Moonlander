@@ -12,6 +12,9 @@ class TMOONLANER
     void FormDestroy();
     void Timer1Timer();
     void formpaint();
+
+	bool IsDone() const { return m_done; }
+
 private:	// User declarations
  
  /*HSNDOBJ                 hsoenginesound     = NULL;*/
@@ -80,6 +83,10 @@ private:	// User declarations
   void newloop();
   void resume();
 public:		// User declarations
-    TMOONLANER();
+	TMOONLANER(HINSTANCE a_instance);
+
+private:
+	bool m_done = false;
+	HINSTANCE m_instance;
 };
 

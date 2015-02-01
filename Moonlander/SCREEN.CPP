@@ -786,33 +786,33 @@ void ddinit(int *bits,LPDIRECTDRAW2 *lpdd,LPDIRECTDRAW *lpdd1,LPDIRECTDRAWSURFAC
          ddrval = (*lpddsprimary)->GetAttachedSurface(&ddscaps,lpddsback);
          if(ddrval != DD_OK)
           {
-           Application->MessageBox("a direct draw eror1","eror",MB_OK);
+           MessageBox(nullptr, "a direct draw error1","error",MB_OK);
            PostQuitMessage(0);
           }
         }
         else
          {
-          Application->MessageBox("a direct draw eror2","eror",MB_OK);
+          MessageBox(nullptr, "a direct draw error2","eror",MB_OK);
 
 
           if(ddrval == DDERR_NOEMULATION)
            {
-            Application->MessageBox("a direct draw eror2a","eror",MB_OK);
+            MessageBox(nullptr, "a direct draw eror2a","eror",MB_OK);
             PostQuitMessage(0);
            }
           if(ddrval == DDERR_NOEXCLUSIVEMODE)
            {
-            Application->MessageBox("a direct draw eror2b","eror",MB_OK);
+            MessageBox(nullptr, "a direct draw eror2b","eror",MB_OK);
             PostQuitMessage(0);
            }
           if(ddrval == DDERR_NOFLIPHW)
            {
-            Application->MessageBox("a direct draw eror2c","eror",MB_OK);
+            MessageBox(nullptr, "a direct draw eror2c","eror",MB_OK);
             PostQuitMessage(0);
            }
           if(ddrval == DDERR_NOMIPMAPHW)
            {
-            Application->MessageBox("a direct draw eror2d","eror",MB_OK);
+            MessageBox(nullptr, "a direct draw eror2d","eror",MB_OK);
             PostQuitMessage(0);
            }
 
@@ -820,7 +820,7 @@ void ddinit(int *bits,LPDIRECTDRAW2 *lpdd,LPDIRECTDRAW *lpdd1,LPDIRECTDRAWSURFAC
       }
       else
        {
-        Application->MessageBox("a direct draw eror3","eror",MB_OK);
+        MessageBox(nullptr, "a direct draw eror3","eror",MB_OK);
           PostQuitMessage(0);
 
        }
@@ -828,7 +828,7 @@ void ddinit(int *bits,LPDIRECTDRAW2 *lpdd,LPDIRECTDRAW *lpdd1,LPDIRECTDRAWSURFAC
     }
     else
      {
-      Application->MessageBox("a direct draw eror4","eror",MB_OK);
+      MessageBox(nullptr, "a direct draw eror4","eror",MB_OK);
           PostQuitMessage(0);
 
      }
@@ -836,7 +836,7 @@ void ddinit(int *bits,LPDIRECTDRAW2 *lpdd,LPDIRECTDRAW *lpdd1,LPDIRECTDRAWSURFAC
   }
   else
    {
-    Application->MessageBox("a direct draw eror5","eror",MB_OK);
+    MessageBox(nullptr, "a direct draw eror5","eror",MB_OK);
           PostQuitMessage(0);
 
    }

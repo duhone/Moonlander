@@ -8,10 +8,6 @@
  *
  ***************************************************************************/
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 ///////////////////////////////////////////////////////////////////////////////
 //
 // DSLoadSoundBuffer    Loads an IDirectSoundBuffer from a Win32 resource in
@@ -210,6 +206,4 @@ IDirectSoundBuffer *SndObjGetFreeBuffer(HSNDOBJ hSO);
 BOOL DSFillSoundBuffer(IDirectSoundBuffer *pDSB, BYTE *pbWaveData, DWORD dwWaveSize);
 BOOL DSParseWaveResource(void *pvRes, WAVEFORMATEX **ppWaveHeader, BYTE **ppbWaveData, DWORD *pdwWaveSize);
 
-#ifdef __cplusplus
-}
 #endif
